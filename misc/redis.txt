@@ -1,0 +1,4 @@
+celery worker -A main --loglevel=warning -f /home/nimai/workspace/audio_prediction/violet.celery.err.log --workdir /home/nimai/workspace/audio_prediction/ -P eventlet --concurrency=1 -Q violet -n wkr1@%%h
+
+/home/nimai/workspace/audio_prediction/violet.celery.err.log
+/home/nimai/workspace/audio_prediction/

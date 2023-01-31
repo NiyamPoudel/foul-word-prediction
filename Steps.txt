@@ -1,0 +1,21 @@
+Steps
+
+Run Celery:
+celery worker -A main --loglevel=warning -f /home/nimai/workspace/audio_prediction/violet.celery.err.log --workdir /home/nimai/workspace/audio_prediction/ -P eventlet --concurrency=1 -Q violet -n wkr1@%%h
+
+Run record.py:
+python3 record.py
+
+Note: 
+        (Sample ffmpeg command to check)
+        ffmpeg-y -f alsa -i hw:1 -af "highpass=f=200, lowpass=f=3000" -t 5 test.wav
+        (Check if ffmpeg is running)
+        lsof /dev/snd/*
+        (Kill ffmpeg process)
+        sudo kill -9 <PID>
+
+sudo systemctl start mongod
+export GOOGLE_APPLICATION_CREDENTIALS="/home/nimai/workspace/audio_prediction/audio-prediction-c6e04524c4b2.json"
+
+
+
